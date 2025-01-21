@@ -8,21 +8,27 @@ export const Home = () => {
   }, []);
   return (
 
-    <div className={`transition-opacity duration-1000 ${
-        loaded ? 'opacity-100' : 'opacity-0'
-      }`}>
+    <div>
 
       <img
         src="./public/HomePagePictures/kerek.png"
         alt=""
         className="mx-auto hidden sm:block w-full h-auto"
       />
-      <h1 className="text-3xl font-bold text-center animate-pulse text-white ">
+      <h1
+        className={`text-3xl font-bold text-center text-white transition-opacity duration-1000 delay-100 ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
         RideHUB
       </h1>
 
-      <h1 className="mt-4 text-2xl font-bold text-center text-white mb-10 ">Developers of the project:</h1>
-      <div className="flex flex-wrap justify-evenly gap-2">
+      <h1 className={`mt-4 text-2xl font-bold text-center text-white mb-10  transition-opacity duration-1000 delay-300 ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        }`}>Developers of the project:</h1>
+      <div className={`flex flex-wrap justify-evenly gap-2 transition-opacity duration-1000 delay-500 ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        }`}>
         <a
           href="https://github.com/niezz01 " target="_blank" 
           className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-yellow-950 dark:bg-orange-500 dark:hover:bg-orange-600 sm:w-1/2"

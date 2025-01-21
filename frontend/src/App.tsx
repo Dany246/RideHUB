@@ -34,6 +34,8 @@ import { Cars } from "./Pages/Cars";
 import { Drivers } from "./Pages/Drivers";
 import { Feedback } from "./Pages/Feedback";
 import { District } from "./Pages/District";
+import {SignUp} from "./Pages/SignUp";
+import {Login} from "./Pages/Login"
 
 const App: React.FC = () => {
   return (
@@ -69,8 +71,12 @@ const App: React.FC = () => {
               </li>
             </ul>
               <ul className="inline-flex space-x-2  text-lg">
-                <li>Sign up</li>
-                <li className="bg-orange-500 text-black px-4 rounded-lg">Login</li>
+                <Link to="/signup">
+                  <li>Sign up</li>
+                </Link>
+                <Link to="login">
+                  <li className="bg-orange-500 text-black px-4 rounded-lg">Login</li>
+                </Link>
               </ul></div>
         </nav>
         <hr className="w-[96%] h-1 mx-auto my-6 bg-gray-100 border-0 rounded dark:bg-stone-900" />
@@ -81,6 +87,8 @@ const App: React.FC = () => {
           <Route path="/drivers" element={<Drivers />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/district" element={<District />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </>

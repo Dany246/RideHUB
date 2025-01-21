@@ -1,6 +1,17 @@
+import { useState, useEffect } from 'react';
+
 export const Home = () => {
+  const [loaded, setLoaded] = useState(false);
+  
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
   return (
-    <>
+
+    <div className={`transition-opacity duration-1000 ${
+        loaded ? 'opacity-100' : 'opacity-0'
+      }`}>
+
       <img
         src="./public/HomePagePictures/kerek.png"
         alt=""
@@ -55,6 +66,6 @@ export const Home = () => {
           </div>
         </a>
       </div>
-    </>
+    </div>
   );
 };

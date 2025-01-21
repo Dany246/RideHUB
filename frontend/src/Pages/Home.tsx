@@ -21,10 +21,10 @@ export const Home = () => {
         RideHUB
       </h1>
 
-      <h1 className="mt-4">Developers of the project:</h1>
+      <h1 className="mt-4 text-2xl font-bold text-center text-white mb-10 ">Developers of the project:</h1>
       <div className="flex flex-wrap justify-evenly gap-2">
         <a
-          href="https://github.com/niezz01"
+          href="https://github.com/niezz01 " target="_blank" 
           className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-yellow-950 dark:bg-orange-500 dark:hover:bg-orange-600 sm:w-1/2"
         >
           <img
@@ -46,7 +46,7 @@ export const Home = () => {
           </div>
         </a>
         <a
-          href="https://github.com/Dany246"
+          href="https://github.com/Dany246" target="_blank"
           className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-yellow-950 dark:bg-orange-500 dark:hover:bg-orange-600 sm:w-1/2"
         >
           <img
@@ -69,3 +69,4 @@ export const Home = () => {
     </div>
   );
 };
+

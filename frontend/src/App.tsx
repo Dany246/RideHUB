@@ -33,7 +33,6 @@ import { Home } from "./Pages/Home";
 import { Cars } from "./Pages/Cars";
 import { Drivers } from "./Pages/Drivers";
 import { Feedback } from "./Pages/Feedback";
-import { District } from "./Pages/District";
 import {SignUp} from "./Pages/SignUp";
 import {Login} from "./Pages/Login"
 
@@ -86,7 +85,6 @@ const App: React.FC = () => {
           <Route path="/cars" element={<Cars />} />
           <Route path="/drivers" element={<Drivers />} />
           <Route path="/feedback" element={<Feedback />} />
-          <Route path="/district" element={<District />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Routes>

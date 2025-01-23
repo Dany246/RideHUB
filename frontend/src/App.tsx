@@ -78,11 +78,6 @@ const App: React.FC = () => {
         </nav>
         <hr className="w-[96%] h-1 mx-auto my-6 bg-gray-100 border-0 rounded dark:bg-stone-900" />
 
-              <div>
-                <button>
-                  <Link to="/order"> Order </Link>
-                </button>
-              </div>
 
         <Routes>
           <Route path="/" element={<Home />} />

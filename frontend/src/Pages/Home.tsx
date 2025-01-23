@@ -1,3 +1,4 @@
+import { ChevronsLeft, ChevronsRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export const Home = () => {
@@ -82,8 +83,14 @@ export const Home = () => {
           loaded ? "opacity-100" : "opacity-0"
         }`}
       >
-        This project is a web application for find a ride, anywhere you want to go. Our project's goal, to help people who is in a hurry and don't have a car, here they can find a safe and quick way to get to their destination. 
+        This project is a web application for find a ride, anywhere you want to go. Our project's goal, to help people who are in a hurry and don't have a car, here they can find a safe and quick way to get to their destination. 
       </h4>
+
+      <div className={`text-center transition-opacity duration-1000 delay-1000 ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}>
+        <p className="text-2xl font-bold text-white">⮚ Order a ride<a className="bg-orange-500 text-black p-1 rounded-lg hover:underline" href="/order">Here</a> ⮘</p>
+      </div>
     </div>
   );
 };

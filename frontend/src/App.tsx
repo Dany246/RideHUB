@@ -35,6 +35,7 @@ import { Drivers } from "./Pages/Drivers";
 import { Feedback } from "./Pages/Feedback";
 import {SignUp} from "./Pages/SignUp";
 import {Login} from "./Pages/Login"
+import { Order } from "./Pages/Order";
 
 const App: React.FC = () => {
   return (
@@ -65,9 +66,6 @@ const App: React.FC = () => {
               <li>
                 <Link to="/feedback"> Feedback </Link>
               </li>
-              <li>
-                <Link to="/district"> District </Link>
-              </li>
             </ul>
               <ul className="inline-flex space-x-2  text-lg">
                 <Link to="/signup">
@@ -80,11 +78,18 @@ const App: React.FC = () => {
         </nav>
         <hr className="w-[96%] h-1 mx-auto my-6 bg-gray-100 border-0 rounded dark:bg-stone-900" />
 
+              <div>
+                <button>
+                  <Link to="/order"> Order </Link>
+                </button>
+              </div>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cars" element={<Cars />} />
           <Route path="/drivers" element={<Drivers />} />
           <Route path="/feedback" element={<Feedback />} />
+          <Route path="/order" element={<Order />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Routes>

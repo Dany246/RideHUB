@@ -36,7 +36,7 @@ export const Home = () => {
         <a
           href="https://github.com/niezz01 "
           target="_blank"
-          className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-yellow-950 dark:bg-orange-500 dark:hover:bg-orange-600 sm:w-1/2"
+          className="flex flex-col items-center  border  rounded-lg shadow md:flex-row md:max-w-xl  border-yellow-950 bg-orange-500 hover:bg-orange-600 sm:w-1/2"
         >
           <img
             className="object-cover w-full h-full rounded-t-lg md:h-full md:w-48 md
@@ -45,10 +45,10 @@ export const Home = () => {
             alt=""
           />
           <div className="flex flex-col justify-between p-4 leading-normal">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-black">
               Tóth Bence
             </h5>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-900">
+            <p className="mb-3 font-normal text-gray-900">
               I am 25 years old from Hajdú-Bihar county, from Hungary. I
               learning sofware development at Szigeti Endre vocational school in
               Szeghalom.
@@ -58,7 +58,7 @@ export const Home = () => {
         <a
           href="https://github.com/Dany246"
           target="_blank"
-          className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-yellow-950 dark:bg-orange-500 dark:hover:bg-orange-600 sm:w-1/2" 
+          className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl border-yellow-950 bg-orange-500 hover:bg-orange-600 sm:w-1/2" 
         >
           <img
             className="object-cover w-full h-auto rounded-t-lg md:h-full md:w-48 md:rounded-none md:rounded-l-lg hidden sm:block"
@@ -66,10 +66,10 @@ export const Home = () => {
             alt=""
           />
           <div className="flex flex-col justify-between p-4 leading-normal">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-black">
               Éri Tibor Dániel
             </h5>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-900">
+            <p className="mb-3 font-normal text-gray-900">
               I am 20 years old from Békés county, from Hungary. I learning
               sofware development at Szigeti Endre vocational school in
               Szeghalom.

@@ -50,7 +50,7 @@ export const Home = () => {
             </h5>
             <p className="mb-3 font-normal text-gray-900">
               I am 25 years old from Hajdú-Bihar county, from Hungary. I
-              learning sofware development at Szigeti Endre vocational school in
+              learning software development at Szigeti Endre vocational school in
               Szeghalom.
             </p>
           </div>
@@ -71,7 +71,7 @@ export const Home = () => {
             </h5>
             <p className="mb-3 font-normal text-gray-900">
               I am 20 years old from Békés county, from Hungary. I learning
-              sofware development at Szigeti Endre vocational school in
+              software development at Szigeti Endre vocational school in
               Szeghalom.
             </p>
           </div>

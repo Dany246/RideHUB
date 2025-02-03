@@ -25,9 +25,18 @@ export const SignUp = () => {
         <a href="/" className="absolute top-4 right-5 text-white">
           <X size={25} strokeWidth={1.5} />
         </a>
-        <h2 className="text-3xl max-w-md text-center">UserName: </h2>
+
+        <h2 className="text-3xl max-w-md text-center">First Name: </h2>
         
-        <input className="rounded px-1 text-black" type="email" placeholder="Enter your UserName" required />
+        <input className="rounded px-1 text-black" type="text" placeholder="Enter your First Name" required />
+        
+        <h2 className="text-3xl max-w-md text-center">Last  Name: </h2>
+        
+        <input className="rounded px-1 text-black" type="text" placeholder="Enter your Last Name" required />
+
+        <h2 className="text-3xl max-w-md text-center">User Name: </h2>
+        
+        <input className="rounded px-1 text-black" type="text" placeholder="Enter your UserName" required />
         
         <h2 className="text-3xl max-w-md text-center">E-mail: </h2>
       
@@ -39,7 +48,7 @@ export const SignUp = () => {
         
         <h2 className="text-3xl max-w-md text-center mt-3">Password again:</h2>
 
-        <input className="rounded text-black px-1" type="password" placeholder="Enter your password" required />
+        <input className="rounded text-black px-1" type="password" placeholder="Enter your password again" required />
 
 
 

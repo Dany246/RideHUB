@@ -7,9 +7,38 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Users {
   id       String @id @default(uuid())
   email    String @unique
   password String
-  apam     String
+  username String
+  place String
+  gender String
+}
+
+model Cars{
+   id Int @id 
+   cartype String
+   price Int
+   lisence_plate String
+   status Boolean
+   color String
+}
+
+model rides{
+   id Int @id
+   driver_id String
+   start DateTime
+   end DateTime
+   user_id Int
+   car_id Int 
+   distance Int
+   payed Boolean
+   done Boolean
+}
+
+model Drivers{
+    id Int @id
+    name String
+    status Boolean
 }

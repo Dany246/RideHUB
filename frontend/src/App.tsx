@@ -85,7 +85,8 @@ const App: React.FC = () => {
                   <Link to="/signup">
                     <li className="duration-300 text-md hover:text-lg">Sign up</li>
                   </Link>
-                  <Link to="login">
+                  <Link to="
+                  login">
                     <li className="px-4 text-black duration-300 bg-orange-500 rounded-lg text-md hover:text-lg">
                       Login
                     </li>

@@ -11,9 +11,9 @@ model Users {
   id       String @id @default(uuid())
   email    String @unique
   password String
-  username String
-  place String
-  gender String
+  userName String
+  firstName String
+  lastName String
 }
 
 model Cars{

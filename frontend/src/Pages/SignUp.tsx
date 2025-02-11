@@ -1,12 +1,37 @@
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { registerUser } from "../../../backend/server/api/api.ts";
+import { useNavigate } from "react-router-dom";
 
-export const SignUp = () => {
-  const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
+
+
+  export const SignUp = () => {
+    const [loaded, setLoaded] = useState(false);
+useEffect(() => {
     setLoaded(true);
-  }, []);
+    }, []);
+
+
+
+    const [form, setForm] = useState({ firstName: '', lastName: '', userName: '', email: '', password: '' })
+    const navigate = useNavigate()
+
+  
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setForm({ ...form, [e.target.name]: e.target.value })
+    }
+  
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault()
+      try {
+        await registerUser(form)
+        alert('Sikeres regisztráció!')
+        navigate('/login')
+      } catch (error: any) {
+        alert(error.response?.data?.error || 'Hiba történt')
+      }
+    }
 
   return (
     <div
@@ -26,65 +51,63 @@ export const SignUp = () => {
           <X size={25} strokeWidth={1.5} />
         </a>
 
-        <h2 className="text-3xl max-w-md text-center">First Name: </h2>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <h2 className="text-3xl max-w-md text-center">First Name:</h2>
+          <input
+            className="rounded px-1 text-black"
+            type="text"
+            placeholder="Enter your First Name"
+         
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          className="rounded px-1 text-black"
-          type="text"
-          placeholder="Enter your First Name"
-          required
-        />
+          <h2 className="text-3xl max-w-md text-center">Last Name:</h2>
+          <input
+            className="rounded px-1 text-black"
+            type="text"
+            placeholder="Enter your Last Name"
+            onChange={handleChange}
+            required
+          />
 
-        <h2 className="text-3xl max-w-md text-center">Last Name: </h2>
+          <h2 className="text-3xl max-w-md text-center">User Name:</h2>
+          <input
+            className="rounded px-1 text-black"
+            type="text"
+            placeholder="Enter your UserName"
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          className="rounded px-1 text-black"
-          type="text"
-          placeholder="Enter your Last Name"
-          required
-        />
+          <h2 className="text-3xl max-w-md text-center">E-mail:</h2>
+          <input
+            className="rounded px-1 text-black"
+            type="email"
+            placeholder="Enter your e-mail"
 
-        <h2 className="text-3xl max-w-md text-center">User Name: </h2>
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          className="rounded px-1 text-black"
-          type="text"
-          placeholder="Enter your UserName"
-          required
-        />
+          <h2 className="text-3xl max-w-md text-center">Password:</h2>
+          <input
+            className="rounded px-1 text-black"
+            type="password"
+            placeholder="Enter your password"
 
-        <h2 className="text-3xl max-w-md text-center">E-mail: </h2>
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          className="rounded px-1 text-black"
-          type="email"
-          placeholder="Enter your e-mail"
-          required
-        />
-
-        <h2 className="text-3xl max-w-md text-center">Password: </h2>
-
-        <input
-          className="rounded px-1 text-black"
-          type="password"
-          placeholder="Enter your password"
-          required
-        />
-
-        <h2 className="text-3xl max-w-md text-center mt-3">Password again:</h2>
-
-        <input
-          className="rounded text-black px-1"
-          type="password"
-          placeholder="Enter your password again"
-          required
-        />
-
-        <button className="text-2xl font-extrabold">
-          Sign
-          <span className="bg-orange-500 text-black px-1 rounded-lg">Up</span>
-        </button>
+          <button type="submit" className="text-2xl font-extrabold">
+            Sign
+            <span className="bg-orange-500 text-black px-1 rounded-lg">Up</span>
+          </button>
+        </form>
       </div>
     </div>
   );
-};
+}
+
+

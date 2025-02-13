@@ -1,6 +1,6 @@
 import { KeySquare, Mail, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { loginUser } from "../../../backend/server/api/api.ts";
+import { loginUser } from "../lib/api/api.ts";
 import { useNavigate } from "react-router-dom";
 
 
@@ -77,7 +77,7 @@ export  const Login = () => {
           required
         />
 
-        <button className="text-2xl font-extrabold" type="submit">
+        <button className="text-2xl font-extrabold" onClick={handleSubmit}>
           Log
           <span className="bg-orange-500 text-black px-1 rounded-lg">In</span>
         </button>

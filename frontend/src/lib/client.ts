@@ -1,6 +1,6 @@
-import {type AppType } from "../../../backend/server/app";
+import { ApiRoutes } from "../../../backend/server/app";
 import { hc } from "hono/client"
 
-const client = hc<AppType>('/')
+const client = hc<ApiRoutes>('/')
 
- export const api = client.api
+export const api = client.api

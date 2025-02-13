@@ -1,37 +1,37 @@
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { registerUser } from "../../../backend/server/api/api.ts";
+import { registerUser } from "../lib/api/api.ts";
 import { useNavigate } from "react-router-dom";
 
-
-
-
-  export const SignUp = () => {
-    const [loaded, setLoaded] = useState(false);
-useEffect(() => {
+export const SignUp = () => {
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
     setLoaded(true);
-    }, []);
+  }, []);
 
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    userName: "",
+    email: "",
+    password: "",
+  });
+  const navigate = useNavigate();
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-    const [form, setForm] = useState({ firstName: '', lastName: '', userName: '', email: '', password: '' })
-    const navigate = useNavigate()
-
-  
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setForm({ ...form, [e.target.name]: e.target.value })
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await registerUser(form);
+      alert("Sikeres regisztráció!");
+      navigate("/login");
+    } catch (error: any) {
+      alert(error.response?.data?.error || "Hiba történt");
     }
-  
-    const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault()
-      try {
-        await registerUser(form)
-        alert('Sikeres regisztráció!')
-        navigate('/login')
-      } catch (error: any) {
-        alert(error.response?.data?.error || 'Hiba történt')
-      }
-    }
+  };
 
   return (
     <div
@@ -56,8 +56,8 @@ useEffect(() => {
           <input
             className="rounded px-1 text-black"
             type="text"
+            name="firstName"
             placeholder="Enter your First Name"
-         
             onChange={handleChange}
             required
           />
@@ -66,6 +66,7 @@ useEffect(() => {
           <input
             className="rounded px-1 text-black"
             type="text"
+            name="lastName"
             placeholder="Enter your Last Name"
             onChange={handleChange}
             required
@@ -75,6 +76,7 @@ useEffect(() => {
           <input
             className="rounded px-1 text-black"
             type="text"
+            name="userName"
             placeholder="Enter your UserName"
             onChange={handleChange}
             required
@@ -84,8 +86,8 @@ useEffect(() => {
           <input
             className="rounded px-1 text-black"
             type="email"
+            name="email"
             placeholder="Enter your e-mail"
-
             onChange={handleChange}
             required
           />
@@ -94,8 +96,8 @@ useEffect(() => {
           <input
             className="rounded px-1 text-black"
             type="password"
+            name="password"
             placeholder="Enter your password"
-
             onChange={handleChange}
             required
           />
@@ -108,6 +110,4 @@ useEffect(() => {
       </div>
     </div>
   );
-}
-
-
+};
